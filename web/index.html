@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Articulos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="validacion.js"></script>
+        <style>
+            body {
+                background-color: pink;
+                font-family: Arial, sans-serif; /* Change the font to Arial with fallback to sans-serif */
+            }
+
+            input[type="submit"] {
+                background-color: blue;
+                color: white; /* Ensure text color contrasts with blue background */
+                border: none; /* Remove default button border */
+                padding: 8px 16px; /* Adjust padding for better button appearance */
+                cursor: pointer; /* Show pointer cursor on hover */
+                border-radius: 4px; /* Optional: Add rounded corners for a modern look */
+                font-family: Arial, sans-serif; /* Change the font to Arial with fallback to sans-serif */
+            }
+
+            /* Optional: Add hover effect for buttons */
+            input[type="submit"]:hover {
+                background-color: darkblue;
+                font-family: Arial, sans-serif; /* Change the font to Arial with fallback to sans-serif */
+            }
+        </style>       
+    </head>
+    <body>
+        <form name="myForm" action="ControlServlet" method="post" onsubmit="return validarFormulario()">
+            <fieldset>
+                <legend class="legend">Datos</legend>
+                <label>Id. Artículo: </label><input type="text" name="identi" size="5"><br/><br/>
+                <label>Categoría: </label><input type="text" name="catego"><br/><br/>
+                <label>Descripción: </label><input type="text" name="descri" size="30"><br/><br/>
+                <label>Precio: </label><input type="number" name="precio" size="5" ><br/><br/>
+                <input type="submit" name="opcion" value="Alta" onclick="setOpcion('Alta')">
+                <input type="submit" name="opcion" value="Baja" onclick="setOpcion('Baja')">
+                <input type="submit" name="opcion" value="Edicion" onclick="setOpcion('Edicion')">
+                <input type="submit" name="opcion" value="Lista" onclick="setOpcion('Lista')">
+            </fieldset>
+        </form>
+    </body>
+</html>
